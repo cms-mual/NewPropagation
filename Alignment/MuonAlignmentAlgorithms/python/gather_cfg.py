@@ -295,9 +295,16 @@ process.muAlMuons.inputCollectionLabels = cms.VInputTag( cms.InputTag("muAlGener
                                                          cms.InputTag("muAlTevMuons","dyt")
                                                        )
 
-process.muAlMuons.fillGlobalTrackQuality = cms.bool(True)
-process.muAlMuons.globalTrackQualityInputTag = cms.InputTag('muAlGlbTrackQual')
-#process.muAlMuons.fillGlobalTrackRefits = cms.bool(False)
+process.muAlMuons.fillEnergy                        = cms.bool(False)
+process.muAlMuons.fillIsolation                     = cms.bool(False)
+process.muAlMuons.fillCaloCompatibility             = cms.bool(False)
+process.muAlMuons.TrackAssociatorParameters.useHO   = cms.bool(False)
+process.muAlMuons.TrackAssociatorParameters.useEcal = cms.bool(False)
+process.muAlMuons.TrackAssociatorParameters.useHcal = cms.bool(False)
+
+process.muAlMuons.globalTrackQualityInputTag        = cms.InputTag('muAlGlbTrackQual')
+process.muAlMuons.fillGlobalTrackQuality            = cms.bool(True)
+process.muAlMuons.fillGlobalTrackRefits             = cms.bool(True)
 
 if iscosmics:
     # process.MuonAlignmentPreFilter.tracksTag = cms.InputTag("ALCARECOMuAlGlobalCosmics:GlobalMuon")
